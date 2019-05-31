@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Dictionary</title>
+</head>
+<body>
+    <h1>Select a term</h1>
+    <select id="options">
+        <option value="ajax">ajax</option>
+        <option value="button">button</option>
+        <option value="load">load</option>
+        <option value="heap">heap</option>
+        <option value="variable">variable</option>
+    </select>
+    <button id="search" value="search">Search</button>
+    <br>
+    <br>
+    <div id="definition"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $('#search').on("click", function () {
+            let option = $("#options").val();
+            $("#definition").load("lookup.php", {option});
+        });
+    </script>
+</body>
+</html>
